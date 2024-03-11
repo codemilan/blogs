@@ -1,14 +1,14 @@
 ---
 title: Error handling on REST API.
 author: Milan Rawal
-date: 2024-01-05 10:00:00 +0545
+date: 2024-01-04 10:00:00 +0545
 categories: [system design]
 tags: [REST api] # TAG names should always be lowercase
 ---
 
 Error handling is a crucial part of working with APIs. When an API encounters an issue, such as invalid input data or missing resources, it can lead to errors. It is essential that these errors are correctly handled and clearly presented to the client or end-user.
 
-The [API lifecycle](https://blog.codemilan.com/api-life-cycle) involves both the API’s producer and consumer. The API producer works on the server side and is responsible for API design and development. The API consumer, on the other hand, works on the client side and is responsible for integrating the API into various systems that end-users interact with. Errors can occur at any stage of this process. These errors, if not handled properly, can lead to downtime, bad user experiences, and lost money and time.
+The API lifecycle involves both the API’s producer and consumer. The API producer works on the server side and is responsible for API design and development. The API consumer, on the other hand, works on the client side and is responsible for integrating the API into various systems that end-users interact with. Errors can occur at any stage of this process. These errors, if not handled properly, can lead to downtime, bad user experiences, and lost money and time.
 
 In this article, we’ll start by reviewing some best practices for handling API errors on the client and server-side—without focusing on any specific API architecture. We will then discuss architecture-specific best practices for API error handling—and explore how the Postman API Platform can help teams handle errors more efficiently.
 
