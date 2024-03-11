@@ -1,8 +1,8 @@
 ---
 title: DOM and the Javascript
 author: Milan Rawal
-date: 2024-02-02 17:00:00 +0545
-categories: [Blogging, programming]
+date: 2024-01-02 17:00:00 +0545
+categories: [programming]
 tags: [javascript DOM] # TAG names should always be lowercase
 ---
 
