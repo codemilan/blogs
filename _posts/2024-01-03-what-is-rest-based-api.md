@@ -10,8 +10,7 @@ A REST API (also called a RESTful API or RESTful web API) is an application prog
 
 First, defined in 2000 by computer scientist Dr. Roy Fielding in his doctoral dissertation, REST provides a relatively high level of flexibility, scalability and efficiency for developers. For these reasons, REST APIs have emerged as a common method for connecting components and applications in a microservices architecture.
 
-[](#rest-design-principles)REST design principles
--------------------
+### REST design principles
 
 At the most basic level, an API is a mechanism that enables an application or service to access a resource within another application or service. The application or service that accesses resources is the client, and the application or service that contains the resource is the server. Some APIs, such as SOAP or XML-RPC, impose a strict framework on developers. But developers can develop REST APIs using virtually any programming language and support a variety of data formats. The only requirement is that they align to these six REST design principles - also known as architectural constraints:
 
@@ -22,7 +21,7 @@ At the most basic level, an API is a mechanism that enables an application or se
 - Layered system architecture: In REST APIs, the calls and responses go through different layers. As a rule of thumb, don’t assume that the client, and server applications connect directly to each other. There may be a number of different intermediaries in the communication loop. REST APIs need to be designed so that neither the client nor the server can tell whether it communicates with the end application or an intermediary.
 - Code on demand (optional): REST APIs usually send static resources, but in certain cases, responses can also contain executable code (such as Java applets). In these cases, the code should only run on-demand.
 
-### [](#how-rest-work)How REST APIs work
+### How REST APIs work
 REST APIs communicate through HTTP requests to perform standard database functions like creating, reading, updating and deleting records (also known as CRUD) within a resource.
 
 For example, a REST API would use a GET request to retrieve a record. A POST request creates a new record. A PUT request updates a record, and a DELETE request deletes one. All HTTP methods can be used in API calls. A well-designed REST API is similar to a website running in a web browser with built-in HTTP functionality.
@@ -31,7 +30,7 @@ The state of a resource at any particular instant, or timestamp, is known as the
 
 Request headers and parameters are also important in REST API calls because they include important identifier information such as metadata, authorizations, uniform resource identifiers (URIs), caching, cookies and more. Request headers and response headers, along with conventional HTTP status codes, are used within well-designed REST APIs.
 
-### [](#rest-best-practices)REST API best practices
+### REST API best practices
 Although flexibility is a big advantage of REST API design, that same flexibility makes it easy to design an API that’s broken or performs poorly. For this reason, professional developers share best practices in REST API specifications.
 
 The OpenAPI Specification (OAS) establishes an interface for describing an API in a way that allows any developer or application to discover it and fully understand its parameters and capabilities. This information includes available endpoints, allowed operations on each endpoint, operation parameters, authentication methods and more. The latest version, OAS3, includes with hands-on tools, such as the OpenAPI Generator, for generating API clients and server stubs in different programming languages.
