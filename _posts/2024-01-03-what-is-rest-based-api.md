@@ -1,7 +1,7 @@
 ---
 title: What is a REST API ?
-author: Milan Rawal
 date: 2024-01-03 05:00:00 +0545
+author: codemilan
 categories: [system design]
 tags: [REST api] # TAG names should always be lowercase
 ---

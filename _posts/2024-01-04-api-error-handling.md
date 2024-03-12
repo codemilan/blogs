@@ -1,6 +1,6 @@
 ---
 title: Error handling on REST API.
-author: Milan Rawal
+author: codemilan
 date: 2024-01-04 10:00:00 +0545
 categories: [system design]
 tags: [REST api] # TAG names should always be lowercase
