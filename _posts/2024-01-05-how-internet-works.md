@@ -4,9 +4,10 @@ author: codemilan
 date: 2024-01-05 02:00:00 +0545
 categories: [internet]
 tags: [www] # TAG names should always be lowercase
+post_images_dir: 'how-internet-works'
 ---
 
-[](#what-happens-when-you-type-amazon-com-or-www-google-com-in-the-browser)What happens when you type amazon com or www google com in the browser ?
+[](#what-happens-when-you-type-amazon-com-or-www-google-com-in-the-browser)What happens when you type amazon com or www google com in the browser
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 At a high level, the following operations happen in the background when you type a URL into your browser and press Enter:
@@ -35,7 +36,7 @@ The following terminology might be useful for you:
 
 When you type a Uniform Resource Locator ([URL](https://en.wikipedia.org/wiki/URL){:target="_blank" rel="noopener"}) into the browser and press Enter, a multitude of actions is executed in the background.
 
-[![High-level workflow for HTTP](/assets/img/high-level-http-workflow.webp)](/assets/img/high-level-http-workflow.webp "HTTP high-level workflow")
+[![High-level workflow for HTTP]({{ site.url }}/assets/images/{{ page.post_images_dir }}/high-level-http-workflow.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/high-level-http-workflow.webp "HTTP high-level workflow")
 
 Figure 1: High-level workflow for HTTP
 
@@ -50,7 +51,7 @@ You need a [domain name](https://en.wikipedia.org/wiki/Domain_name){:target="_bl
 
 The domain name space (**DNS hierarchy**) is an inverted tree structure. The DNS hierarchy has a single domain at the top level known as the root domain.
 
-[![DNS hierarchy structure](/assets/img/dns-hierarchy.webp)](/assets/img/dns-hierarchy.webp "DNS hierarchy structure")
+[![DNS hierarchy structure]({{ site.url }}/assets/images/{{ page.post_images_dir }}/dns-hierarchy.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/dns-hierarchy.webp "DNS hierarchy structure")
 
 Figure 2: DNS hierarchy structure
 
@@ -63,7 +64,7 @@ A URL consists of the following parts:
 *   domain (second-level)
 *   top-level domain
 
-[![Basic URL structure](/assets/img/basic-url-structure.webp)](/assets/img/basic-url-structure.webp "Basic URL structure")
+[![Basic URL structure]({{ site.url }}/assets/images/{{ page.post_images_dir }}/basic-url-structure.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/basic-url-structure.webp "Basic URL structure")
 
 Figure 3: Basic URL structure
 
@@ -71,7 +72,7 @@ The protocol section of the URL informs the web server which protocol to use on 
 
 The DNS resolution is a sequential process. The subsequent steps of DNS resolution get executed only if the cache in the former step does not have the relevant DNS entry.
 
-[![How does DNS resolution work?](/assets/img/how-does-dns-resolution-work.webp)](/assets/img/how-does-dns-resolution-work.webp "How does DNS resolution work?")
+[![How does DNS resolution work?]({{ site.url }}/assets/images/{{ page.post_images_dir }}/how-does-dns-resolution-work.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/how-does-dns-resolution-work.webp "How does DNS resolution work?")
 
 Figure 4: How does DNS resolution work?
 
@@ -86,7 +87,7 @@ The following operations get executed in sequential order for DNS resolution:
 7.  DNS resolver queries Authoritative name servers such as google.com.
 8.  Optionally, the DNS resolver queries Authoritative subdomain servers such as maps.google.com depending on your query.
 
-[![Recursive DNS lookup](/assets/img/recursive-dns-lookup.webp)](/assets/img/recursive-dns-lookup.webp "Recursive DNS lookup")
+[![Recursive DNS lookup]({{ site.url }}/assets/images/{{ page.post_images_dir }}/recursive-dns-lookup.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/recursive-dns-lookup.webp "Recursive DNS lookup")
 
 Figure 5: Recursive DNS lookup
 
@@ -101,7 +102,7 @@ You can compare HTTP to an abstract or a high-level protocol (Application layer 
 
 The client performs a three-way handshake with the server to establish a TCP connection. TCP requires a three-way handshake because of the bi-directional communication channel. If you make a two-way handshake, you can only start a single-directional communication channel.
 
-[![TCP three-way handshake](/assets/img/TCP-three-way-handshake.webp)](/assets/img/TCP-three-way-handshake.webp "TCP three-way handshake")
+[![TCP three-way handshake]({{ site.url }}/assets/images/{{ page.post_images_dir }}/TCP-three-way-handshake.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/TCP-three-way-handshake.webp "TCP three-way handshake")
 
 Figure 6: TCP three-way handshake
 
@@ -120,7 +121,7 @@ In [asymmetric encryption](https://en.wikipedia.org/wiki/Public-key_cryptography
 
 You could compare asymmetric encryption to an email service. The public key would be your Email address and the private key would be the password used to access the email account. Anyone can easily verify that you sent the email by looking at the Email address of the sender. However, if anyone sends an Email to your account, only you can access it using the password.
 
-[![HTTPS upgrade request](/assets/img/HTTPS-upgrade-request.webp)](/assets/img/HTTPS-upgrade-request.webp "HTTPS upgrade request")
+[![HTTPS upgrade request]({{ site.url }}/assets/images/{{ page.post_images_dir }}/HTTPS-upgrade-request.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/HTTPS-upgrade-request.webp "HTTPS upgrade request")
 
 Figure 7: HTTPS upgrade request
 
@@ -137,7 +138,7 @@ Anyone listening to the HTTP Upgrade request or response messages would not be a
 
 To create an SSL certificate, the server executes a Certificate Signing Request ([CSR](https://en.wikipedia.org/wiki/Certificate_signing_request){:target="_blank" rel="noopener"}) to the CA.
 
-[![SSL Certificate Signing Request](/assets/img/SSL-CSR.webp)](/assets/img/SSL-CSR.webp "SSL Certificate Signing Request")
+[![SSL Certificate Signing Request]({{ site.url }}/assets/images/{{ page.post_images_dir }}/SSL-CSR.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/SSL-CSR.webp "SSL Certificate Signing Request")
 
 Figure 8: SSL Certificate Signing Request
 
@@ -148,13 +149,13 @@ The CSR transfers the public key of the server to the CA. The CA has a pair of p
 
 Hypertext Transfer Protocol (**HTTP**) is a mechanism for transporting data between a client and a server. The client issues an HTTP(S) Request to the server to fetch or transfer data. The server responds with relevant content and completion status information about the request.
 
-[![HTTP simplified workflow](/assets/img/HTTP-simplified-workflow.webp)](/assets/img/HTTP-simplified-workflow.webp "HTTP simplified workflow")
+[![HTTP simplified workflow]({{ site.url }}/assets/images/{{ page.post_images_dir }}/HTTP-simplified-workflow.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/HTTP-simplified-workflow.webp "HTTP simplified workflow")
 
 Figure 9: HTTP simplified workflow
 
 The client makes a GET HTTP Request to view a website (such as google.com). The client makes a POST HTTP Request if the client wants to submit data to the server (such as searching for some keyword in google.com).
 
-[![Basic HTTP URL structure](/assets/img/basic-url-structure.webp)](/assets/img/basic-url-structure.webp "Basic HTTP URL structure")
+[![Basic HTTP URL structure]({{ site.url }}/assets/images/{{ page.post_images_dir }}/basic-url-structure.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/basic-url-structure.webp "Basic HTTP URL structure")
 
 Figure 10: Basic HTTP URL structure
 
@@ -169,7 +170,7 @@ The HTTP Request is composed of the following entities:
 *   HTTP headers
 *   HTTP body (optional)
 
-``` http
+```
 google.com/search?q=beatles
 
 method: GET
@@ -181,7 +182,7 @@ User-agent: Chrome
 
 The HTTP Request method (Verb) defines the type of action that should be performed on the server. Some of the popular HTTP methods are the following:
 
-[![Popular HTTP methods](/assets/img/popular-HTTP-methods.webp)](/assets/img/popular-HTTP-methods.webp "Popular HTTP methods")
+[![Popular HTTP methods]({{ site.url }}/assets/images/{{ page.post_images_dir }}/popular-HTTP-methods.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/popular-HTTP-methods.webp "Popular HTTP methods")
 
 Figure 11: Popular HTTP methods
 
@@ -196,7 +197,7 @@ The HTTP server response is composed of the following entities:
 *   HTTP headers
 *   HTTP body
 
-``` http
+```
 status code: 200 OK
 Cache-control: private, expires=<datetime>
 Content-type: text/HTML
@@ -207,13 +208,13 @@ Content-encoding: gzip
 
 The HTTP Response Status Code helps you to troubleshoot failures. The HTTP Status Codes can be categorized into the following:
 
-[![HTTP Status Codes](/assets/img/HTTP-status-codes.webp)](/assets/img/HTTP-status-codes.webp "HTTP Status Codes")
+[![HTTP Status Codes]({{ site.url }}/assets/images/{{ page.post_images_dir }}/HTTP-status-codes.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/HTTP-status-codes.webp "HTTP Status Codes")
 
 Figure 12: HTTP Status Codes
 
 The HTTP Request and Response headers are used to control the cache, authorize the client, or compress the data that is transferred between the client and the server. For example, the user-agent HTTP request header helps the server to identify if the client is a mobile or a desktop client. Some of the most popular HTTP headers are the following:
 
-[![Popular HTTP headers](/assets/img/popular-HTTP-headers.webp)](/assets/img/popular-HTTP-headers.webp "Popular HTTP headers")
+[![Popular HTTP headers]({{ site.url }}/assets/images/{{ page.post_images_dir }}/popular-HTTP-headers.webp)]({{ site.url }}/assets/images/{{ page.post_images_dir }}/popular-HTTP-headers.webp "Popular HTTP headers")
 
 Figure 13: Popular HTTP headers
 
