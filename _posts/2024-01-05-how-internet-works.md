@@ -4,7 +4,7 @@ author: codemilan
 date: 2024-01-05 02:00:00 +0545
 categories: [internet]
 tags: [www] # TAG names should always be lowercase
-post_images_dir: 'how-internet-works'
+post_images_dir: 'how-internet-works-2024-01-05'
 ---
 
 [](#what-happens-when-you-type-amazon-com-or-www-google-com-in-the-browser)What happens when you type amazon com or www google com in the browser

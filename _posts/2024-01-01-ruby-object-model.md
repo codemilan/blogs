@@ -4,6 +4,7 @@ author: codemilan
 date: 2024-01-01 02:00:00 +0545
 categories: [programming]
 tags: [ruby] # TAG names should always be lowercase
+post_images_dir: 'ruby-object-model-2024-01-01'
 ---
 
 [](#objects)Objects
@@ -52,7 +53,7 @@ coco.class
 
 `coco`’s state contains two instance variables: `@name` and `@affection`. Its class is `Cat`. Nothing surprising so far.
 
-![Diagram of coco and the Cat class](/assets/images/fig-1-coco-and-cat.svg)
+![Diagram of coco and the Cat class]({{ site.url }}/assets/images/{{ page.post_images_dir }}/fig-1-coco-and-cat.svg)
 
 The word “class” in Ruby can mean multiple things: the instantiatable class which provides behaviour to its instances, the class object, or both. When talking about an object’s class, we generally intend to describe the methods defined by that class. For this purpose, we will use the word _behaviour_ from now on.
 
@@ -67,11 +68,11 @@ coco.class.ancestors
 
 The ancestor chain is a linked list. For `Cat`, it looks like this:
 
-![Diagram of Cat&rsquo;s ancestor chain](/assets/images/simple-ancestor-chain.svg)
+![Diagram of Cat&rsquo;s ancestor chain]({{ site.url }}/assets/images/{{ page.post_images_dir }}/simple-ancestor-chain.svg)
 
 Whenever you call the `pet` method on `coco`, the Ruby VM will find the behaviour in `coco`’s class’s ancestor chain (`Cat`’s, that is), from left to right: starting with `Cat`, then `Animal`, and so on, until the method is found. When calling `super` within that method, Ruby would find the next ancestor defining a behaviour for the `pet` method, and invoke it, in this case, the one defined in `Animal`.
 
-![Diagram of coco and the Cat, with Cat showing methods](/assets/images/fig-2-coco-ancestors.svg)
+![Diagram of coco and the Cat, with Cat showing methods]({{ site.url }}/assets/images/{{ page.post_images_dir }}/fig-2-coco-ancestors.svg)
 
 In the previous figure, ancestors after `Animal` (`Kernel` and `BasicObject`) have been omitted.
 
@@ -83,7 +84,7 @@ Cat.instance_methods(false)
 
 In Ruby, classes are also values, which means they are also objects. This is interesting; it means that in addition to defining methods, classes are also the combination of state and a reference to a class.
 
-![Diagram of coco and the Cat class, with classes showing state](/assets/images/cat-is-a-class.svg)
+![Diagram of coco and the Cat class, with classes showing state]({{ site.url }}/assets/images/{{ page.post_images_dir }}/cat-is-a-class.svg)
 
 For this facet (objects which are instances of the `Class` class), we will be talking about _class objects_.
 
@@ -150,7 +151,7 @@ coco.class.ancestors
 
 Note that `include` adds the module to the ancestor chain _after_ the receiver; `Quadruped` appears after `Cat`.
 
-![Diagram of coco and the Cat class](/assets/images/cat-include-quadruped.svg)
+![Diagram of coco and the Cat class]({{ site.url }}/assets/images/{{ page.post_images_dir }}/cat-include-quadruped.svg)
 
 In the [Objects section](#objects), we said that the ancestor chain’s order is used to determine which method gets called first. Using another example, we can confirm this:
 ``` ruby
@@ -191,7 +192,7 @@ Dog.ancestors
 
 This means that behaviours defined by `Quadruped` will have precedence over those defined by `Dog`. The following figure shows the distinction: `prepend` adds the module to the beginning of the ancestor chain, while `include` adds it right after the receiving module.
 
-![Diagram of coco and the Cat class](/assets/images/prepend-before-include-after.svg)
+![Diagram of coco and the Cat class]({{ site.url }}/assets/images/{{ page.post_images_dir }}/prepend-before-include-after.svg)
 
 [](#singleton-classes)Singleton Classes
 ---------------------------------------
@@ -230,7 +231,7 @@ dora
 
 The following diagram shows the hierarchy of both `coco` and `dora`, with their respective singleton classes; only `dora`’s singleton class defines the `number_of_toes` method.
 
-![Diagram of coco and the Cat class](/assets/images/coco-and-dora-hierarchy.svg)
+![Diagram of coco and the Cat class]({{ site.url }}/assets/images/{{ page.post_images_dir }}/coco-and-dora-hierarchy.svg)
 
 Astute readers will correctly understand that, in many cases, an object’s singleton class can be elided (omitted) by the virtual machine. In fact, if the VM _did not_ elide most of them, no Ruby program would be able to run. This is because **class objects also have singleton classes**, and Singleton classes are also class objects, which themselves also have singleton classes… and so on recursively. In our previous example, `coco`’s singleton class can be elided since it neither defines methods, nor has state.
 
@@ -448,7 +449,7 @@ Cat.singleton_class.ancestors
 
 The next figure illustrates the relationships between class objects, their singleton classes, and their respective superclasses.
 
-![Diagram of coco and the Cat class](/assets/images/class-singleton-class-inheritance.svg)
+![Diagram of coco and the Cat class]({{ site.url }}/assets/images/{{ page.post_images_dir }}/class-singleton-class-inheritance.svg)
 
 Modules, however, are not inherited at both levels (class and singleton class behaviours). Instead, the programmer picks which ancestor chain will be impacted by using either `prepend` or `include` (class), or `extend` (singleton class).
 ``` ruby
@@ -475,7 +476,7 @@ M.singleton_class.ancestors
 
 As you can see, while `L` appears in `M`’s ancestors, `Extended` does not, and while `L`’s singleton class appears in `M`’s singleton class’s ancestors, `Included` does not.
 
-[](#conclusion-or-tl-dr)Conclusion (or TL; DR)
+[](#conclusion)Conclusion
 ----------------------------------------------
 
 Here’s what I hope you take away from this post:
