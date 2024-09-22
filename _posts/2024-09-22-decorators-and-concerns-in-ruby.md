@@ -393,11 +393,15 @@ While Rails doesn’t have a built-in decorator pattern, you can easily implemen
 
 Let's use the `draper` gem, which is a popular and simple way to add decorators in Rails.
 
+* * *
+
 1\. **Add Draper Gem**: First, add `draper` to your `Gemfile` and run `bundle install`:
 
 ```ruby
 gem 'draper'
 ```
+
+* * *
 
 2\. **Generate a Decorator**: Generate a decorator for a model (e.g., `Post`):
 
@@ -406,6 +410,8 @@ rails generate decorator Post
 ```
 
 This will create a decorator class in `app/decorators/post_decorator.rb`.
+
+* * *
 
 3\. **Define Presentation Logic**: Add methods for display-related logic in the `PostDecorator` class.
 
@@ -427,6 +433,8 @@ end
 * `delegate_all` delegates all methods to the original model (`object`).
 * Use `h` to call view helpers (like `truncate`, `number_to_currency`, etc.).
 
+* * *
+
 4\. **Use the Decorator in Controllers/Views**: To use the decorator in your controller or view, you can decorate your model:
 
 ```ruby
@@ -439,6 +447,8 @@ end
 #### Example 2: Manually Creating a Simple Decorator
 
 If you don't want to use the `draper` gem, you can manually create a decorator class. Here's how:
+
+* * *
 
 1\. **Create a Decorator Class**: You can place your decorator in `app/decorators`.
 
@@ -459,6 +469,8 @@ If you don't want to use the `draper` gem, you can manually create a decorator c
 end
 ```
 
+* * *
+
 2\. **Use the Decorator**:
 
 ```ruby
@@ -467,6 +479,8 @@ end
 # In a view 
 <p>Published on: <%= @post.formatted_publish_date %></p> <p>Content: <%= @post.truncated_content %></p>
 ```
+
+* * *
 
 ### Advantages of Decorators
 
