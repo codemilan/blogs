@@ -377,7 +377,7 @@ puts decorated_product.title
 
 Decorators in Rails are used to extend or modify the behavior of models or other objects without altering their underlying code. They’re a part of the **Decorator Design Pattern** and allow for a clean separation between business logic (which stays in the model) and presentation logic (which goes in the decorator).
 
-### Why Use Decorators?
+## Why Use Decorators?
 
 Decorators are useful for:
 
@@ -389,19 +389,15 @@ Instead of putting everything in your models or views, decorators help organize 
 
 While Rails doesn’t have a built-in decorator pattern, you can easily implement it using gems like `draper` or by manually creating decorator classes.
 
-#### Example 1: Using Draper Gem
+## Example 1: Using Draper Gem
 
 Let's use the `draper` gem, which is a popular and simple way to add decorators in Rails.
-
-* * *
 
 1\. **Add Draper Gem**: First, add `draper` to your `Gemfile` and run `bundle install`:
 
 ```ruby
 gem 'draper'
 ```
-
-* * *
 
 2\. **Generate a Decorator**: Generate a decorator for a model (e.g., `Post`):
 
@@ -410,8 +406,6 @@ rails generate decorator Post
 ```
 
 This will create a decorator class in `app/decorators/post_decorator.rb`.
-
-* * *
 
 3\. **Define Presentation Logic**: Add methods for display-related logic in the `PostDecorator` class.
 
@@ -433,8 +427,6 @@ end
 * `delegate_all` delegates all methods to the original model (`object`).
 * Use `h` to call view helpers (like `truncate`, `number_to_currency`, etc.).
 
-* * *
-
 4\. **Use the Decorator in Controllers/Views**: To use the decorator in your controller or view, you can decorate your model:
 
 ```ruby
@@ -444,11 +436,9 @@ end
 <p>Published on: <%= @post.formatted_publish_date %></p> <p>Content: <%= @post.truncated_content %></p>
 ```
 
-#### Example 2: Manually Creating a Simple Decorator
+## Example 2: Manually Creating a Simple Decorator
 
 If you don't want to use the `draper` gem, you can manually create a decorator class. Here's how:
-
-* * *
 
 1\. **Create a Decorator Class**: You can place your decorator in `app/decorators`.
 
@@ -469,8 +459,6 @@ If you don't want to use the `draper` gem, you can manually create a decorator c
 end
 ```
 
-* * *
-
 2\. **Use the Decorator**:
 
 ```ruby
@@ -480,21 +468,19 @@ end
 <p>Published on: <%= @post.formatted_publish_date %></p> <p>Content: <%= @post.truncated_content %></p>
 ```
 
-* * *
-
-### Advantages of Decorators
+## Advantages of Decorators
 
 * **Separation of Concerns**: Business logic stays in the model, while presentation-related logic is moved to decorators.
 * **Clean Views**: Reduces the need for complex view helpers.
 * **Reusability**: Easily reuse decorated logic across different views.
 
-### When to Use Decorators
+## When to Use Decorators
 
 * When you have methods that are only relevant to views (like formatting dates, truncating text, or converting units).
 * If you find yourself adding too many methods in the model that are only for display purposes.
 
 This is a great way to keep things tidy and enhance maintainability in your Rails apps! 💡
 
-### Conclusion
+## Conclusion
 
 The **Decorator Design Pattern** provides a flexible, modular, and scalable way to add functionality to objects in Ruby. Ruby’s dynamic nature makes implementing decorators easy, whether you do it manually or use libraries like `draper`. Decorators help keep your code **clean**, **modular**, and **easy to maintain**.
