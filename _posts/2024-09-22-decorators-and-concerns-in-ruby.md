@@ -373,7 +373,7 @@ puts decorated_product.title
 * The decorator changes how the product's name and price are displayed without modifying the `Product` class itself.
 * This is helpful when you want to transform data for presentation, especially when dealing with models directly from the database.
 
-### Implementing Decorators in Rails
+## Implementing Decorators in Rails
 
 Decorators in Rails are used to extend or modify the behavior of models or other objects without altering their underlying code. They’re a part of the **Decorator Design Pattern** and allow for a clean separation between business logic (which stays in the model) and presentation logic (which goes in the decorator).
 
