@@ -23,4 +23,5 @@ assets/js/dist
 assets/.DS_Store
 assets/images/.DS_Store
 
-notes
+notes/
+.vscode/
